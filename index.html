@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contador de caracteres</title>
+	<title>limitador de caracteres</title>
 </head>
 <style type="text/css">
 *{
@@ -69,7 +69,7 @@ footer{
 		characteres= document.querySelector("label span"),
 		limit=5;
 
-		characteres.innerText=limit
+		characteres.innerText=limit;
 
 		textarea.onkeyup=function(){
 			if(!this.value.length<limit){
