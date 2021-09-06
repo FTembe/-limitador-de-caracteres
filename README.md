@@ -1,1 +1,1 @@
-# -limitador-de-caracteres
+# limitador-de-caracteres
