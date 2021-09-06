@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contador de caracteres</title>
+</head>
+<style type="text/css">
+*{
+	margin: 0;
+	overflow: hidden;
+	box-sizing: border-box;
+	outline: none;
+	font-family: lato;
+}
+body{
+	width: 100%;
+	height: 100vh;
+	background: #112;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.wrapper{
+	width: 80%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	/*align-items: center;*/
+	flex-direction: column;
+}
+label{
+	margin: 1rem 0;
+	color: #fff;
+}
+label span{
+	font-weight: 900;
+}
+h2{
+	margin-bottom: 1rem;
+	color: #fff;
+}
+input{
+	padding: 2px 10px;
+	font-size: 16px;
+}
+footer{
+	color: #fff;
+	margin-bottom: 1rem;
+	
+	font-size: 18px;
+}
+</style>
+<body>
+	<div class="wrapper">
+		<h2>Limitador de Caracteres</h2>
+		<input type="text" id="input">
+		<label>Caracteres <span>15</span></label>
+		<textarea id="textarea" rows="6"></textarea>
+	</div>
+	<footer>Francisco Tembe</footer>
+</body>
+<script type="text/javascript">
+
+	(function (){
+		let textarea= document.querySelector("#textarea"),
+		input= document.querySelector("#input"),
+		characteres= document.querySelector("label span"),
+		limit=5;
+
+		characteres.innerText=limit
+
+		textarea.onkeyup=function(){
+			if(!this.value.length<limit){
+				this.value=this.value.slice(0,limit)
+			}
+			update(this.value.length);
+		}
+		input.onchange=function(){
+			limit=this.value;
+			update()
+		}
+		function update(value=null){
+			characteres.innerText=limit-value;
+		}
+	})()
+
+</script>
+</html>
